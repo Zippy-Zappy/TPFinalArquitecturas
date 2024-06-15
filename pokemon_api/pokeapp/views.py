@@ -49,11 +49,15 @@ def add_pokemon_form(request):
         pokemon_form = PokemonForm()
         csrf_token = get_token(request)
         html_form = f"""
-            <form method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="{csrf_token}">
-                {pokemon_form.as_p()}
-                <button type="submit">Submit</button>
-            </form>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            <div class="mb-3">
+                <form method="post">
+                <input type="hidden" class="form-control" name="csrfmiddlewaretoken" value="{csrf_token}">
+                    {pokemon_form.as_p()}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         """
         return HttpResponse(html_form)
 def add_type_form(request):
@@ -66,10 +70,14 @@ def add_type_form(request):
         type_form = TypeForm()
         csrf_token = get_token(request)
         html_form = f"""
-            <form method="post">
-            <input type="hidden" name="csrfmiddlewaretoken" value="{csrf_token}">
-                {type_form.as_p()}
-                <button type="submit">Submit</button>
-            </form>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            <div class="mb-3">
+                <form method="post">
+                <input type="hidden" class="form-control" name="csrfmiddlewaretoken" value="{csrf_token}">
+                    {type_form.as_p()}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         """
         return HttpResponse(html_form)
